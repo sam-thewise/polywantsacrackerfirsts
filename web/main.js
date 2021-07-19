@@ -57,13 +57,29 @@ function render(user){
             let contract = new web3.eth.Contract( abi, contractAdress );
 
             contract.methods.nameUrlPairsOfOwner( ethAddress ).call({from: ethereum.selectedAddress }).then( (data) => {
+                if (data.length == 0) {
+                    return;
+                }
+
                 data.forEach(element => {
-                    console.log(element);
+                    renderNFT(element);
                 });
             } );
         });
 
     });
+}
+
+function renderNFT( data ){
+    let htmlString = `
+        <h2>${data.name}</h2>
+        <p><img src="${data.url}" alt="${data.name}" /></p>
+        <hr/>
+    `;
+
+    let element = $.parseHTML(htmlString);
+
+    $('#nft-list').append(element);
 }
 
 async function getAbi(){
