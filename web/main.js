@@ -45,6 +45,7 @@ function init(){
             return;
         }
         
+        $('#list-status').show();
         toggleButtons(false);
     } catch (error) {
         
@@ -61,10 +62,12 @@ function render(user){
 
             contract.methods.nameUrlPairsOfOwner( ethAddress ).call({from: ethereum.selectedAddress }).then( (data) => {
                 if (data.length == 0) {
+                    $('#list-status').show();
                     return;
                 }
 
                 data.forEach(element => {
+                    $('#list-status').hide();
                     renderNFT(element);
                 });
             } );

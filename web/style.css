@@ -1,6 +1,10 @@
-#login-button, #logout-button, #wallet-address
+#login-button, #logout-button, #wallet-address, #list-status
 {
     display: none;
+}
+
+.navbar-nav .nav-item{
+    margin-left: 8px;
 }
 
 .navbar-nav {
