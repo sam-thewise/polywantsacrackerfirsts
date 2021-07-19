@@ -32,6 +32,8 @@ function initButtons(){
 }
 
 function init(){
+    Moralis.Web3.getSigningData = () => 'Sign Poly Wants a Cracker Firsts to read your wallet address.';
+
     initButtons();
 
     try {
@@ -50,9 +52,11 @@ function init(){
 }
 
 function render(user){
+
+
     Moralis.Web3.enable().then( (web3) => {
         const ethAddress = user.get('ethAddress');
-
+        $('#wallet-address span').html(ethAddress);
         getAbi().then( (abi) => {
             let contract = new web3.eth.Contract( abi, contractAdress );
 
