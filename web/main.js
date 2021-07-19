@@ -52,8 +52,6 @@ function init(){
 }
 
 function render(user){
-
-
     Moralis.Web3.enable().then( (web3) => {
         const ethAddress = user.get('ethAddress');
         $('#wallet-address span').html(ethAddress);
