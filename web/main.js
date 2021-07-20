@@ -77,7 +77,8 @@ function render(user){
 }
 
 function renderNFT( data ){
-    let htmlString = `
+    let htmlString = 
+    `
         <h2>${data.name}</h2>
         <p><img src="${data.url}" alt="${data.name}" /></p>
         <hr/>

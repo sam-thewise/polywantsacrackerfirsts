@@ -3,6 +3,11 @@
     display: none;
 }
 
+#nft-list img{
+    max-width: 100%;
+    margin: 16px auto;
+}
+
 .navbar-nav .nav-item{
     margin-left: 8px;
 }
